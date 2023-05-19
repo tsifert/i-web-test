@@ -32,7 +32,7 @@ const UploadProgress = (props: UploadProgressProps) => {
         <div className={`grid grid-cols-[auto_1fr] gap-x-3 gap-y-4 w-full ${props.uploadProgress.currentFilename !== '' ? '' : 'invisible'}`}>
             <div className="w-36 truncate text-ellipsis">
                 <span>
-                    {props.uploadProgress.currentFilename} {props.uploadProgress.currentFilename}
+                    {props.uploadProgress.currentFilename}
                 </span>
             </div>
 
