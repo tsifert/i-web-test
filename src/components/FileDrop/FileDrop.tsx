@@ -44,7 +44,7 @@ const FileDrop = (): ReactElement => {
 
                     // we only want files, not text or anything else!
                     setDragMessage(
-                        e.dataTransfer?.types?.indexOf('Files') === 0 ?
+                        e.dataTransfer?.types?.indexOf('Files') !== -1 ?
                             DragPrompt.draggingFile :
                             DragPrompt.draggingInvalid
                     );
@@ -56,13 +56,12 @@ const FileDrop = (): ReactElement => {
                 }}
                 onDrop={(e: DragEvent) => {
                     e.preventDefault();
-
                     e.dataTransfer?.types?.indexOf('Files') === -1 ?
                         DragPrompt.draggingFile :
                         DragPrompt.draggingInvalid
                     setDragMessage(DragPrompt.notDragging);
 
-                    if (e.dataTransfer?.types?.indexOf('Files') === 0) {
+                    if (e.dataTransfer?.types?.indexOf('Files') !== -1) {
                         handleFilesSelected([...e.dataTransfer.files]);
                     }
                 }}
