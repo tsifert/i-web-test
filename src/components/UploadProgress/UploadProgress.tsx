@@ -27,7 +27,6 @@ const UploadProgress = (props: UploadProgressProps) => {
         setTotalPercent(percent);
     }, [props.totalCompleted, props.uploadProgress.totalFilesToBeTransferred]);
 
-
     return (
         <div className={`grid grid-cols-[auto_1fr] gap-x-3 gap-y-4 w-full ${props.uploadProgress.currentFilename !== '' ? '' : 'invisible'}`}>
             <div className="w-36 truncate text-ellipsis">

@@ -46,6 +46,8 @@ const CustodianDisplay = ({
 
             } while (transferredData <= 10000);
 
+            // we're using a separate state as our mock upload doesn't play nicely with our 
+            // fileUploadProgressData state
             setTotalCompleted(completed++);
         }
 

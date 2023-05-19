@@ -15,7 +15,6 @@ const FileDrop = (): ReactElement => {
     const hiddenFileInputRef = useRef<HTMLInputElement>(null);
 
     const [custodians, setCustodians] = useState<Custodian[]>([]);
-
     const [dragMessage, setDragMessage] = useState<DragPrompt>(DragPrompt.notDragging);
 
     const handleFilesSelected = (files: File[]): void => {
@@ -43,6 +42,7 @@ const FileDrop = (): ReactElement => {
                     e.preventDefault();
                     e.stopPropagation();
 
+                    // we only want files, not text or anything else!
                     setDragMessage(
                         e.dataTransfer?.types?.indexOf('Files') === 0 ?
                             DragPrompt.draggingFile :
